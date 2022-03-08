@@ -36,7 +36,7 @@ margin_right = 103.0
 margin_bottom = 25.0
 text = "Open File"
 
-[node name="FileDialog" type="FileDialog" parent="OpenFile"]
+[node name="OpenFileDialog" type="FileDialog" parent="OpenFile"]
 anchor_left = 6.378
 anchor_top = 14.725
 anchor_right = 6.378
@@ -45,7 +45,7 @@ margin_left = -387.972
 margin_top = -203.5
 margin_right = 388.028
 margin_bottom = 203.5
-window_title = "Open a File"
+window_title = "Open File"
 resizable = true
 mode = 0
 access = 2
@@ -57,6 +57,26 @@ margin_left = 107.0
 margin_top = 5.0
 margin_right = 181.0
 margin_bottom = 25.0
-text = "Open File"
+text = "Save As"
+
+[node name="SaveFileDialog" type="FileDialog" parent="SaveFile"]
+anchor_left = 6.378
+anchor_top = 14.725
+anchor_right = 6.378
+anchor_bottom = 14.725
+margin_left = -465.972
+margin_top = -203.5
+margin_right = 310.028
+margin_bottom = 203.5
+window_title = "Save As"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/Grant DDrive/Git Repos/Text-Editor"
+current_path = "/Grant DDrive/Git Repos/Text-Editor/"
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="OpenFile" to="." method="_on_OpenFile_pressed"]
+[connection signal="file_selected" from="OpenFile/OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
+[connection signal="pressed" from="SaveFile" to="." method="_on_SaveFile_pressed"]
+[connection signal="file_selected" from="SaveFile/SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
