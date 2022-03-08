@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 1, 0.34375, 1 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 29.0
+margin_right = -1.0
+margin_bottom = -1.0
+text = "Type Here..."
+syntax_highlighting = true
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 25.0
+margin_bottom = 25.0
+text = "X"
+
+[node name="OpenFile" type="Button" parent="."]
+margin_left = 29.0
+margin_top = 5.0
+margin_right = 103.0
+margin_bottom = 25.0
+text = "Open File"
+
+[node name="FileDialog" type="FileDialog" parent="OpenFile"]
+anchor_left = 6.378
+anchor_top = 14.725
+anchor_right = 6.378
+anchor_bottom = 14.725
+margin_left = -387.972
+margin_top = -203.5
+margin_right = 388.028
+margin_bottom = 203.5
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/Grant DDrive/Git Repos/Text-Editor"
+current_path = "/Grant DDrive/Git Repos/Text-Editor/"
+
+[node name="SaveFile" type="Button" parent="."]
+margin_left = 107.0
+margin_top = 5.0
+margin_right = 181.0
+margin_bottom = 25.0
+text = "Open File"
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

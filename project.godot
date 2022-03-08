@@ -11,7 +11,13 @@ config_version=4
 [application]
 
 config/name="Text- Editor"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/resizable=false
+window/size/borderless=true
 
 [physics]
 
